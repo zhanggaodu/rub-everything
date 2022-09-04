@@ -1,0 +1,19 @@
+{
+  "name": "rub-everything",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:zhanggaodu/rub-everything.git",
+  "author": "zhangxuemei <ZhangXueMei@windimg.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@vitejs/plugin-vue": "^3.0.3",
+    "sass": "^1.54.8",
+    "sass-loader": "^13.0.2",
+    "tailwindcss": "^3.1.8",
+    "vite": "^3.0.9",
+    "vue": "^3.2.38"
+  },
+  "scripts": {
+    "dev": "vite"
+  }
+}
