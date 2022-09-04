@@ -1,10 +1,10 @@
-<script setup >
-import Tab from './Tab.vue'
+<script setup>
+import Cavans from './Cavans.vue'
 
 </script>
 
 <template>
-  <Tab />
+  <Cavans />
 
 </template>
 
