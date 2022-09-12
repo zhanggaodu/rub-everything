@@ -3,30 +3,30 @@ import { ref } from 'vue'
 
 const box = ref()
 //点击tab出现在视口里
-function change (index) {
-  let tabBox = box.value
-  if (tabBox == null) return  
-  let barLeft = Math.floor(tabBox.scrollLeft)
-  if (barLeft == 0) return
-  let node = document.querySelector(`#${index}`)
-  let valueLeft = Math.floor(node.getBoundingClientRect().left)
-  let gap = Math.floor((valueLeft - barLeft) / 2)
-  let final = barLeft + gap
-  let scrollAnimation = window.requestAnimationFrame(animation)
-  function animation () {
-    if (final < barLeft && tabBox.scrollLeft > 0) {
-      barLeft -= 6
-      tabBox.scrollLeft = barLeft
+function change (id) {
+  nextTick( ()=> {
+    let node = document.querySelector(`#${id}`)
+    if (node == null) return
+    let windowWidth = window.innerWidth
+    let valueWidth = node.getBoundingClientRect().width
+    let valueLeft = node.getBoundingClientRect().left
+    let valueRight = node.getBoundingClientRect().right
+    if (valueLeft > 0 && valueLeft < windowWidth && valueRight < windowWidth) return
+    let final = valueLeft > 0 ? (valueWidth - ( windowWidth - valueLeft)) : Math.abs(valueLeft)
+    let scrollAnimation = window.requestAnimationFrame(animation)
+    final = Math.floor(final)
+    function animation () {    
+      let detail = valueLeft > 0 ? 2 : -2
+      tab.value.scrollLeft += detail
+      final -= 2
+      if (final < 0) {
+        window.cancelAnimationFrame(scrollAnimation)
+        return
+      }
       requestAnimationFrame(animation)
-    } else if(final > barLeft) {
-      barLeft += 6
-      if(final < barLeft) return
-      tabBox.scrollLeft = barLeft
-      requestAnimationFrame(animation)
-    } else {
-      window.cancelAnimationFrame(scrollAnimation)
     }
-  }
+  })
+  // emit('change', clickTab)
 }
 </script>
 
