@@ -1,10 +1,12 @@
 <script setup>
-import Cavans from './Cavans.vue'
+// import Cavans from './Cavans.vue'
+import Calendar from './Calendar.vue';
 
 </script>
 
 <template>
-  <Cavans />
+  <!-- <Cavans /> -->
+  <Calendar />
 
 </template>
 

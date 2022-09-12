@@ -1,5 +1,9 @@
 module.exports = {
-  content: ['./src/**/*.{html,js}'],
+  content: [
+    './index.html',
+    './src/**/*.{vue,js,ts,jsx,tsx}',
+    '../ada/**/*.{vue,js,ts,jsx,tsx}'
+  ],
   theme: {
     colors: {
       'blue': '#1fb6ff',
