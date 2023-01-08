@@ -1,10 +1,12 @@
 <script setup>
 // import Cavans from './Cavans.vue'
-import Calendar from './Calendar.vue';
+import Calendar from './Calendar.vue'
+import TextToImage from './TextToImage.vue'
 
 </script>
 
 <template>
+  <TextToImage />
   <!-- <Cavans /> -->
   <Calendar />
 
