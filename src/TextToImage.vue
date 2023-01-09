@@ -9,7 +9,7 @@ const bind_change = () => {
   const canvas = document.getElementById('canvas')
   const ctx = canvas.getContext('2d')
   ctx.fillStyle = 'red'
-  ctx.fillRect(0, 0, 300, 100);
+  ctx.fillRect(0, 0, 300, 150);
   ctx.font = "20px serif"
   ctx.fillStyle = 'white'
   ctx.fillText(name.value, 10, 20)
